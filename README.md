@@ -16,7 +16,7 @@ Member
     follows_count = models.IntegerField(blank=True,default=0)
     publish_count = models.IntegerField(blank=True,default=0)
     subscribe_count = models.IntegerField(blank=True,default=0)
-
+ 
 Message 
     id = models.IntegerField()
     status = models.IntegerField(default=0)
