@@ -5,8 +5,7 @@ an app of share travel experence plantform:
 
 nginx+uwsgi+django+redis+zeroMQ(?)+solr(?)+openstack swift
 
-============20120701=========
-��ʼ�����������ݽṹ��
+============20120701=========init database 
 
 Member 
     id = models.IntegerField()
