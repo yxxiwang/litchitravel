@@ -1,11 +1,12 @@
 litchitravel
 ============
 
-an app of share travel experence plantform
+an app of share travel experence plantform:
+
 nginx+uwsgi+django+redis+zeroMQ(?)+solr(?)+openstack swift
 
 ============20120701=========
-³õÊ¼»¯£¬¶¨ÒåÊý¾Ý½á¹¹£¬
+ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý½á¹¹ï¿½ï¿½
 
 Member 
     id = models.IntegerField()
