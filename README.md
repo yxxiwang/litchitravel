@@ -2,9 +2,11 @@ litchitravel
 ============
 
 an app of share travel experence plantform
+nginx+uwsgi+django+redis+zeroMQ(?)+solr(?)+openstack swift
 
 ============20120701=========
 初始化，定义数据结构，
+
 Member 
     id = models.IntegerField()
 
