@@ -1,0 +1,5 @@
+djangorestframework
+djangorestframework/utils
+djangorestframework/tests
+djangorestframework/runtests
+djangorestframework/templatetags

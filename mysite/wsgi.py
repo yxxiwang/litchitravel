@@ -27,6 +27,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
+
 #import django.core.handlers.wsgi
 #applicaiton=django.core.handlers.wsgi.WSGIHandler()
 

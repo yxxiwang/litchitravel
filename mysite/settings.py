@@ -43,20 +43,24 @@ USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
+
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = '/root/litchitravel/site_media'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
 MEDIA_URL = ''
 
+#ADMIN_MEDIA_PREFIX = '/root/litchitravel/mysite/templates/
+
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = ''
+#STATIC_ROOT = '/root/litchitravel/mysite/templates'
+STATIC_ROOT = '/root/litchitravel/djangorestframework'
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -67,6 +71,9 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    #("images", os.path.join('/usr/lib/python2.6/site-packages/Django-1.4-py2.6.egg/django/contrib/admin/static','images'),
+    #("css",    os.path.join('/usr/lib/python2.6/site-packages/Django-1.4-py2.6.egg/django/contrib/admin/static/admin','css'),
+    #("js",     os.path.join('/usr/lib/python2.6/site-packages/Django-1.4-py2.6.egg/django/contrib/admin/static','js'),
 )
 
 # List of finder classes that know how to find static files in
@@ -74,7 +81,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+#   'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -120,6 +127,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'django.contrib.admin',
+    'djangorestframework',
     'wangxi',
 )
 
