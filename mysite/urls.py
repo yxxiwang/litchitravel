@@ -18,6 +18,7 @@ from django.core.urlresolvers import reverse
 from django.contrib import admin
 
 from django.http import HttpResponse
+import os
 
 admin.autodiscover()
 #from mysite.views import wangxi
@@ -47,12 +48,41 @@ urlpatterns = patterns('',
      url(r'^wangxi/$', 'wangxi.views.index'),
      url(r'^djangorestframework/$', include('djangorestframework.urls')),
      #url(r'^api/$', 'api.views.index'),
+     #url(r'^swift/$', include('swift_app.urls')),
      url(r'^msg/$', ListOrCreateModelView.as_view(resource=MyResource)),
      url(r'^msg/(?P<pk>[^/]+)/$', InstanceModelView.as_view(resource=MyResource)),
      
-     url(r'^$', ObjectStoreRoot.as_view(), name='object-store-root'),
-     url(r'^(?P<key>[A-Za-z0-9_-]{1,64})/$', StoredObject.as_view(), name='stored-object'),
+     url(r'^api$', ObjectStoreRoot.as_view(), name='object-store-root'),
+     url(r'^api/(?P<key>[A-Za-z0-9_-]{1,64})/$', StoredObject.as_view(), name='stored-object'),
 
      url(r'^test$',ExampleView.as_view(),name='mixin-view'),  
      #url(r'^demo/$','depot.views.detail'),  
 )
+
+urlpatterns += patterns('swift_app.views',
+    # Example:
+    # (r'^swift_app/', include('swift_app.foo.urls')),
+
+    # Uncomment the admin/doc line below to enable admin documentation:
+    # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
+
+    # Uncomment the next line to enable the admin:
+    #(r'^admin/', include(admin.site.urls)),
+    (r'^$','login'),
+    (r'^login/$', 'login'),
+    (r'^register/$','register'),
+    (r'^logout/$', 'logout'),
+    (r'^already-logged/$','already_logged'),
+    (r'^control-panel/$','control_panel'),
+    (r'^operation/$','operation'),
+    (r'^upload/$','upload'),
+    (r'download/$','download'),
+    (r'^move/$','move'),
+    (r'^preview/$','preview'),
+)
+urlpatterns+=patterns('',
+        (r'^site_media/(?P<path>.*)$','django.views.static.serve',{'document_root':os.path.join(os.path.dirname(__file__),'site_media')}),
+        (r'^download/(?P<path>.*)$','django.views.static.serve',
+        {'document_root': os.path.join(os.path.dirname(__file__),'temp'),
+        'show_indexes':True}),
+        )
